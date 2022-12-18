@@ -1,5 +1,5 @@
-let currentPage = 200;
-const movieList = document.getElementById('main');
+let currentPage = 1;
+//const movieList = document.getElementById('main');
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page='+currentPage
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const main = document.getElementById('main')
