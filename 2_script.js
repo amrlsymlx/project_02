@@ -83,7 +83,7 @@ const updatePage = (newPage) => {
 incrementButton.addEventListener('click', () => updatePage(currentPage + 1));
 decrementButton.addEventListener('click', () => updatePage(currentPage - 1));
 
-// ------------------------------------------------
+// ------------------------Go Button------------------------
 
 const goButton = document.getElementById('go-button')  
 
