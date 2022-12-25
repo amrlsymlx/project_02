@@ -1,12 +1,13 @@
 let currentPage = 1;
-const DISCOVER_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c'
+
+const DISCOVER_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page='
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="'
 
 const main = document.getElementById('main')
 
 // Get initial movies
-getMovies(DISCOVER_URL+'&page='+currentPage)
+getMovies(DISCOVER_URL+currentPage)
 
 async function getMovies(url) {
   const res = await fetch(url)
@@ -99,32 +100,17 @@ const incrementButton = document.getElementById('next');
 const decrementButton = document.getElementById('previous');
 const page = document.getElementById('current');
 
-function pageIncrease() {
-  currentPage+=1;
+const updatePage = (newPage) => {
+  currentPage = newPage;
   page.textContent = currentPage;
+  getMovies(DISCOVER_URL + currentPage);
 }
 
-function pageDecrease() {
-  currentPage -= 1;
+incrementButton.addEventListener('click', () => updatePage(currentPage + 1));
+decrementButton.addEventListener('click', () => updatePage(currentPage - 1));
 
-  if (currentPage < 1) {
-    currentPage = 1;
-  }
 
-  page.textContent = currentPage;
-}
-
-incrementButton.addEventListener('click', () => {
-  pageIncrease()
-  getMovies(DISCOVER_URL+'&page='+currentPage);
-  
-});
-
-decrementButton.addEventListener('click', () => {
-  pageDecrease()
-  getMovies(DISCOVER_URL+'&page='+currentPage);
-  
-});
+// --------------------------------------------------
 
 // ------------------------------------------------
 
