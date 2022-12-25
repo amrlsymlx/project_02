@@ -1,4 +1,4 @@
-var currentPage = 1;
+let currentPage = 1;
 const DISCOVER_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="'
@@ -99,14 +99,12 @@ const incrementButton = document.getElementById('next');
 const decrementButton = document.getElementById('previous');
 const page = document.getElementById('current');
 
-incrementButton.addEventListener('click', () => {
-  currentPage += 1;
+function pageIncrease() {
+  currentPage+=1;
   page.textContent = currentPage;
-  getMovies(DISCOVER_URL+'&page='+currentPage);
-});
+}
 
-decrementButton.addEventListener('click', () => {
-  
+function pageDecrease() {
   currentPage -= 1;
 
   if (currentPage < 1) {
@@ -114,7 +112,18 @@ decrementButton.addEventListener('click', () => {
   }
 
   page.textContent = currentPage;
+}
+
+incrementButton.addEventListener('click', () => {
+  pageIncrease()
   getMovies(DISCOVER_URL+'&page='+currentPage);
+  
+});
+
+decrementButton.addEventListener('click', () => {
+  pageDecrease()
+  getMovies(DISCOVER_URL+'&page='+currentPage);
+  
 });
 
 // ------------------------------------------------
