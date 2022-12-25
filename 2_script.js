@@ -128,7 +128,6 @@ decrementButton.addEventListener('click', () => {
 
 // ------------------------------------------------
 
-
 const searchInput = document.querySelector('#search')
 const genreSelect = document.querySelector('#list');
 
