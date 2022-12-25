@@ -60,7 +60,9 @@
         const genreName = genreOption ? genreOption.textContent : '';
         // Display the combined genre and movie title
         document.querySelector('#combined').textContent = `Genre: ${genreName} | Title: ${title}`;
-        }
+            
+        console.log(title);
+    }
 
         // Add event listeners to the form and input elements
         form.addEventListener('submit', event => {

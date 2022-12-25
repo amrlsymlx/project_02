@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: black;
-  --secondary-color: #5a8fe6;
+  --secondary-color: #4281a4;
 }
 
 * {
@@ -42,7 +42,7 @@ header {
     font-family: inherit;
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    color: #fff;
+    color: #ead2ac;
 }
 
 #go-button {
@@ -94,7 +94,7 @@ footer {
 /* Until here */
 
 .search::placeholder {
-  color: #fff;
+  color: #fcfffd;
 }
 
 .search:focus {
@@ -123,7 +123,7 @@ main {
 }
 
 .movie-info {
-  color: #eee;
+  color: #ead2ac;
   display: flex;
   align-items: center;
   justify-content: space-between;
