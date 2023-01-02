@@ -75,8 +75,15 @@ const decrementButton = document.getElementById('previous');
 const page = document.getElementById('current');
 
 const updatePage = (newPage) => {
+  
   currentPage = newPage;
+
+  if (currentPage <= 0) {
+    currentPage = 1
+  }
+  
   page.textContent = currentPage;
+  
   getMovies(DISCOVER_URL + currentPage);
 }
 
