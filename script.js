@@ -118,3 +118,4 @@ const updatePage = (newPage) => {
 
 incrementButton.addEventListener('click', () => updatePage(currentPage + 1));
 decrementButton.addEventListener('click', () => updatePage(currentPage - 1));
+
