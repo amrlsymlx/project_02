@@ -48,6 +48,7 @@ function getClassByRate(vote) {
     } else {
         return 'red'
     }
+    
 }
 
 form.addEventListener('submit', (e) => {
